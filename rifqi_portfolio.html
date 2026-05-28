@@ -227,18 +227,57 @@
     color: var(--accent);
   }
 
-  .hero-stats {
+  .hero-photo {
     position: absolute;
     right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .hero-photo img {
+    width: 280px;
+    height: 340px;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(20%) contrast(1.05);
+    border: 1px solid var(--border);
+    display: block;
+  }
+
+  .hero-photo::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px solid var(--accent);
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  .hero-photo::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--accent2);
+    opacity: 0.15;
+    z-index: -1;
+  }
+
+  .hero-stats {
+    position: absolute;
+    left: 48px;
     bottom: 80px;
     display: flex;
-    flex-direction: column;
-    gap: 32px;
+    flex-direction: row;
+    gap: 48px;
     z-index: 2;
   }
 
   .stat {
-    text-align: right;
+    text-align: left;
   }
 
   .stat-num {
@@ -654,6 +693,10 @@
       <a href="#experience" class="btn btn-secondary">Lihat Pengalaman</a>
     </div>
   </div>
+  <div class="hero-photo">
+    <img src="https://rifqinabil.github.io/portofolio-cv/foto.jpg" alt="Muhammad Rifqi Nabil">
+  </div>
+
   <div class="hero-stats">
     <div class="stat">
       <div class="stat-num">1+</div>
